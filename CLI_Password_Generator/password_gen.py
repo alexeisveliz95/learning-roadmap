@@ -3,12 +3,27 @@ import string
 import os
 import datetime
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
+
     #Interactive user input
-    length = int(input("How many characters? (minimum 8): "))
-    while length < 8:
-        print("Password must be at least 8 characters long.")
-        length = int(input("How many characters? (minimum 8): "))
+    def get_password_length() -> int:
+        """Prompts the user for the desired password length and validates it."""
+        while True:
+            try:
+                length = int(input("How many characters? (minimum 8, maximum 128): "))
+                if 8 <= length <= 128:
+                    return length
+                else:
+                    print("Password must be between 8 and 128 characters long.")
+            except ValueError, TypeError:
+                exit_input = input("Invalid input. Do you want to exit? (y/n): ").lower()
+                if exit_input == 'y':
+                    exit()
+                print("Invalid input. Please enter a valid number. Try again.")
+            
+    
+    length = get_password_length()
+
     use_uppercase = input("Include uppercase letters? (y/n): ").lower() == 'y'
     use_digits = input("Include digits? (y/n): ").lower() == 'y'
     use_special_chars = input("Include special characters? (y/n): ").lower() == 'y'
