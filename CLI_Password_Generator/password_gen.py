@@ -1,5 +1,7 @@
 import secrets 
 import string
+import os
+import datetime
 
 if __name__ == "__main__": 
     #Interactive user input
@@ -28,3 +30,9 @@ if __name__ == "__main__":
     password = generate_password(length, use_uppercase, use_digits, use_special_chars)
     print(f"Generated password: {password}")
 
+    # Save the generated password to a file with a timestamp
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    password_file = os.path.join(script_dir, "passwords.txt")
+    with open(password_file, "a") as file:    
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        file.write(f"{timestamp} - {password}\n")
