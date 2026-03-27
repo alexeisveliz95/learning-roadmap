@@ -1,4 +1,4 @@
-# 🗺️ Learning Roadmap — Alexei
+# 🗺️ Learning Roadmap
 
 > Documenting my journey from zero to Python Developer.
 > Started: March 2026 | Target: Junior Freelancer by Q1 2027
