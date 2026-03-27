@@ -1,10 +1,14 @@
 import secrets 
 import string
 
-length = 12
-use_digits = True
-use_special_chars = True
-use_uppercase = True
+#Interactive user input
+length = int(input("How many characters? (minimum 8): "))
+while length < 8:
+    print("Password must be at least 8 characters long.")
+    length = int(input("How many characters? (minimum 8): "))
+use_uppercase = input("Include uppercase letters? (y/n): ").lower() == 'y'
+use_digits = input("Include digits? (y/n): ").lower() == 'y'
+use_special_chars = input("Include special characters? (y/n): ").lower() == 'y'
 
 #Password generation function
 def generate_password(length: int, use_uppercase: bool = True, use_digits: bool = True, use_special_chars: bool = True) -> str:
