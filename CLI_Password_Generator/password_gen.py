@@ -29,7 +29,7 @@ if __name__ == "__main__":
                     return length
                 else:
                     print("Password must be between 8 and 128 characters long.")
-            except ValueError, TypeError:
+            except (ValueError, TypeError):
                 exit_input = input("Invalid input. Do you want to exit? (y/n): ").lower()
                 if exit_input == 'y':
                     exit()
