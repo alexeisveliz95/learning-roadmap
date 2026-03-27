@@ -45,7 +45,7 @@
 ### Projects
 | Project | Status | Repo |
 |---|---|---|
-| CLI Password Generator | 🔨 In progress | - |
+| CLI Password Generator | 🔨 In progress | [CLI_Password_Generator](https://github.com/alexeisveliz95/learning-roadmap/tree/main/CLI_Password_Generator) |
 | Expense Tracker CSV | ⏳ Pending | - |
 | Web Scraper | ⏳ Pending | - |
 | Grade Analyzer | ⏳ Pending | - |
