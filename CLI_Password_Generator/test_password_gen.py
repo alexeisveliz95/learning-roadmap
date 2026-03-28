@@ -1,5 +1,6 @@
 from password_gen import generate_password
 
 def test_password_length():
-    resultado = generate_password(16)
+    profile = {"length": 16}
+    resultado = generate_password(profile)
     assert len(resultado) == 16
