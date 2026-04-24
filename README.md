@@ -13,16 +13,16 @@
 - [x] Loops (for/while)
 - [x] Lists
 - [x] Functions (in progress)
-- [ ] List comprehensions
+- [x] List comprehensions
 - [x] Dictionaries
-- [ ] File handling (txt, csv, json)
-- [ ] Error handling (try/except)
+- [x] File handling (txt, csv, json)
+- [x] Error handling (try/except)
 
 ### Phase 2 — Intermediate
-- [ ] OOP (classes, inheritance)
-- [ ] Modules & packages
-- [ ] Virtual environments
-- [ ] External libraries (requests, BeautifulSoup)
+- [x] OOP (classes, inheritance)
+- [x] Modules & packages
+- [x] Virtual environments
+- [x] External libraries (requests, BeautifulSoup)
 
 ### Phase 3 — Backend
 - [ ] FastAPI basics
