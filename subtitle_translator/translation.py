@@ -30,3 +30,6 @@ def translate_batches(blocks, target_lang="es"):
 def process_batch(batch_blocks, translator):
     # Unimos todos los textos del lote con un delimitador único
     to_translate = " ||| ".join([" ".join(b.content) for b in batch_blocks])
+
+    # Llamada a la API
+    translated_text = translator.translate(to_translate)
