@@ -12,6 +12,6 @@ def apply_discount(price, discount):
         return "The discount should be between 0 and 100"
         
     else:
-        return price - (price * discount / 100)
+        return f"{price - (price * discount / 100)}"
     
 apply_discount(5, "4")
