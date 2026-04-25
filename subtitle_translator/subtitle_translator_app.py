@@ -19,3 +19,14 @@ def save_file(blocks, path):
         for block in blocks:
             file.write(f"{block.index}\n")
             file.write(f"{block.timestamp}\n")
+
+            if block.translated_content:
+                text_to_write = block.translated_content
+            else:
+                block.content
+
+            for line in text_to_write:
+                file.write(f"{line}\n")
+
+            file.write("\n")
+        pass
