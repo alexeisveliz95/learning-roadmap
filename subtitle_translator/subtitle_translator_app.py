@@ -13,3 +13,9 @@ def load_subtitles(path):
 def run_translation(blocks, lang):
     translate_batches(blocks, lang)
     pass
+
+def save_file(blocks, path):
+    with open(path, "w", encoding="utf-8") as file:
+        for block in blocks:
+            file.write(f"{block.index}\n")
+            file.write(f"{block.timestamp}\n")
