@@ -22,3 +22,11 @@ def translate_batches(blocks, target_lang="es"):
 
         current_batch.append(block)
         current_chars += len(text)
+    
+    # Traducimos el último lote que quedó pendiente
+    if current_batch:
+        process_batch(current_batch, translator)
+
+def process_batch(batch_blocks, translator):
+    # Unimos todos los textos del lote con un delimitador único
+    to_translate = " ||| ".join([" ".join(b.content) for b in batch_blocks])
