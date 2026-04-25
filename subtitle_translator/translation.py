@@ -36,3 +36,9 @@ def process_batch(batch_blocks, translator):
 
     # Separamos el resultado usando el mismo delimitador
     translated_parts = translated_text.split(" ||| ")
+
+    # Repartimos cada parte traducida de vuelta a su objeto original
+    for i, block in enumerate(batch_blocks):
+        if i < len(translated_parts):
+            # Guardamos como lista para mantener la estructura original
+            block.translated_content = [translated_parts[i].strip()]
