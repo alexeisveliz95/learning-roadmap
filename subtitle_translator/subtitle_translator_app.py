@@ -30,3 +30,25 @@ def save_file(blocks, path):
 
             file.write("\n")
         pass
+
+@app.command()
+def translate(
+    input_file: str = typer.Argument(..., help= "Original .srt path file"),
+    output_file: str = typer.Argument(..., help= "Path to will be saved the translated .srt file "),
+    lang: str = typer.Option("es", "--lang", "-l", help="Destined language to translate(es, en, fr)")
+):
+    """
+    Subtitle Traslator CLI v1.0
+    """
+    console.print(f"[bold blue]Loading File:[/bold blue] {input_file}")
+    blocks = load_subtitles(input_file)
+    console.print(f"[bold yellow]Translating to {lang}...[/bold yellow]")
+    run_translation(blocks, lang)
+    console.print(f"[bold green]Saving on :[/bold green] {output_file}")
+    save_file(blocks, output_file)
+    console.print("[bold green]¡Done! Traslation completed with success. 🎉[/bold green]")
+
+
+if __name__ == "__main__":
+    app()
+
