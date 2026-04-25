@@ -36,3 +36,7 @@ def parse_srt(file_path: str)-> List(SubtitleBlock):
             else:
                 current_text.append(line)
         
+        if current_index and current_time:
+            blocks.append(SubtitleBlock(current_index, current_time, current_text))
+
+    return blocks        
