@@ -33,3 +33,6 @@ def process_batch(batch_blocks, translator):
 
     # Llamada a la API
     translated_text = translator.translate(to_translate)
+
+    # Separamos el resultado usando el mismo delimitador
+    translated_parts = translated_text.split(" ||| ")
