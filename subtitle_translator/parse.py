@@ -15,4 +15,9 @@ class SubtitleBlock:
 def time_mark_detection(line: str)-> bool:
     return ":" in line and line.count(":") == 4 and "-->" in line
 
-def parse_
+def parse_srt(file_path: str)-> List(SubtitleBlock):
+    blocks = []
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        current_index, current_time, current_text = "", "", []
+        
