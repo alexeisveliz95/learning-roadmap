@@ -12,3 +12,13 @@ def translate_batches(blocks, target_lang="es"):
     for block in track(blocks, description="[cyan]Proscessing subttitles...[/cyan]"):
         # Unimos las líneas del subtítulo por si tiene varias
         text = " ".join(block.content)
+
+        # Si este texto supera los 2000 caracteres, traducimos lo que llevamos
+        if current_chars + len(text) > 2000:
+            process_batch(current_batch, translator)
+            time.sleep(0)
+            current_batch = []
+            current_chars = 0
+
+        current_batch.append(block)
+        current_chars += len(text)
