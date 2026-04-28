@@ -1,5 +1,7 @@
+__pycache__/
+.gitgnore
+.vscode
+.env
+*.pyc
 passwords.txt
 config.toml
-__pycache__/
-*.pyc
-.env
